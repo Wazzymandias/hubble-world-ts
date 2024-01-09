@@ -1,4 +1,4 @@
-declare module "blessed";
+declare module 'blessed';
 
 // import Blessed from "blessed";
 
