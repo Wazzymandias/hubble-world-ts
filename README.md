@@ -1,7 +1,7 @@
 # hubble-world-ts
 - Map Hubble nodes part of [Farcaster Hub Protocol](https://docs.farcaster.xyz/hubble/hubble)
 - Point to a Hub's log file and it will parse it and display the nodes on a map
-
+![img.png](data/hubble-world.png)
 ## Requirements
 - Node.js v21.5.0+
 - bun v1.0.21+
