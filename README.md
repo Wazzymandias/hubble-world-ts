@@ -5,19 +5,33 @@
 ## Requirements
 - Node.js v21.5.0+
 - bun v1.0.21+
+- [Optional] [ip2location](https://www.ip2location.io/) API key (see below)
+> Note: This project uses [ip2location](https://www.ip2location.io/) for mapping IP addresses to latitude and longitude.
 
-> Note: This project uses [ip2location](https://www.ip2location.io/) for geolocation.
+## Usage
+- Sample [geoip.json](./data/geoip.json) file is provided in the data folder, see [here](#without-api-key) for usage
 
+### Dependencies
 To install dependencies:
 
 ```bash
 bun install
 ```
 
-To run:
-
+### Run
+#### With IP to location mapping API
 ```bash
-bun run index.ts
+GEOIP_API_KEY=<ip2location-api-key> bun run index.ts --api --hub-log-file <path-to-hub-log-file> 
 ```
-
-This project was created using `bun init` in bun v1.0.21. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+#### With log watch
+```bash
+GEOIP_API_KEY=<ip2location-api-key> bun run index.ts --api --hub-log-file <path-to-hub-log-file> --watch
+```
+#### Without API key
+```bash
+bun run index.ts --no-api --geoip-data-file <path-to-geoip-data-file> 
+```
+Example:
+```bash
+bun run index.ts --no-api --geoip-data-file ./data/geoip.json
+```

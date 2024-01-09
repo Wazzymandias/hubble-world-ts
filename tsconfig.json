@@ -6,6 +6,10 @@
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
 
     /* Bundler mode */
     "esModuleInterop": true,
