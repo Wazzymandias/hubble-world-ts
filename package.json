@@ -1,0 +1,17 @@
+{
+  "name": "hubble-world-ts",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.11.0",
+    "commander": "^11.1.0",
+    "geoip-lite": "^1.4.9"
+  }
+}
