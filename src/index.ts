@@ -62,16 +62,18 @@ class HubbleWorldApp {
       if (enableWatch) {
         console.log(`Watching ${hubLogFile} for changes`);
         watch(hubLogFile, () => {
-          (async () => {
-            const updatedIPs = parseGossipAddress(hubLogFile);
-            await this.geoip?.mergeAndLookupLocations(updatedIPs);
-            this.updateMapMarkers();
-          })().catch((error: any) => {
-            console.error(`Error processing log file: ${error}`);
+          setImmediate(async () => {
+            try {
+              const updatedIPs = parseGossipAddress(hubLogFile);
+              await this.geoip?.mergeAndLookupLocations(updatedIPs);
+              this.updateMapMarkers();
+            } catch (error: any) {
+              console.error(`Error processing log file: ${error}`);
+            }
           });
         });
-        await this.processLogAndDisplayMap(hubLogFile);
       }
+      await this.processLogAndDisplayMap(hubLogFile);
     } else {
       await this.processCacheAndDisplayMap();
     }
