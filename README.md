@@ -21,17 +21,17 @@ bun install
 ### Run
 #### With IP to location mapping API
 ```bash
-GEOIP_API_KEY=<ip2location-api-key> bun run index.ts --api --hub-log-file <path-to-hub-log-file> 
+GEOIP_API_KEY=<ip2location-api-key> bun run src/index.ts --api --hub-log-file <path-to-hub-log-file> 
 ```
 #### With log watch
 ```bash
-GEOIP_API_KEY=<ip2location-api-key> bun run index.ts --api --hub-log-file <path-to-hub-log-file> --watch
+GEOIP_API_KEY=<ip2location-api-key> bun run src/index.ts --api --hub-log-file <path-to-hub-log-file> --watch
 ```
 #### Without API key
 ```bash
-bun run index.ts --no-api --geoip-data-file <path-to-geoip-data-file> 
+bun run src/index.ts --no-api --geoip-data-file <path-to-geoip-data-file> 
 ```
 Example:
 ```bash
-bun run index.ts --no-api --geoip-data-file ./data/geoip.json
+bun run src/index.ts --no-api --geoip-data-file ./data/geoip.json
 ```
